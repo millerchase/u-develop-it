@@ -27,15 +27,49 @@ app.get('/', (req, res) => {
     });
 });
 
-
-db.query(`SELECT * FROM candidates`, (err, rows) => {
-    console.log(rows);
-});
-
 // Default response for any other request (Not Found)
 app.use((req,res) => {
     res.status(404).end();
 });
+
+
+// // query for all candidates from db
+// db.query(`SELECT * FROM candidates`, (err, rows) => {
+//     console.log(rows);
+// });
+
+// // query for a single candidate from db
+// db.query(`SELECT * FROM candidates WHERE id = 1`, (err, rows) => {
+//     if (err) {
+//         console.log(err);
+//     }
+
+//     console.log(rows)
+// })
+
+// const sql = `INSERT INTO candidates (id, first_name, last_name, industry_connected)
+//     VALUES (?,?,?,?)`
+// ;
+
+// const params = [1, 'Ronald', 'Firbank', 1];
+
+// db.query(sql, params, (err, results) => {
+//     if (err) {
+//         console.log(err);
+//     }
+
+//     console.log(results);
+// });
+
+// query to delete candidate from db
+// db.query('DELETE FROM candidates WHERE id = ?', 1, (err, result) => {
+//     if (err) {
+//         console.log(err);
+//     }
+
+//     console.log(result);
+// });
+
 
 // server launch
 app.listen(PORT, () => {
