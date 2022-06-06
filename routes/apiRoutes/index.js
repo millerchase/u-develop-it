@@ -2,15 +2,11 @@
 const express = require('express');
 const router = express.Router();
 
-// Require routes
-const candidateRoutes = require('./candidateRoutes');
-const partyRoutes = require('./partyRoutes');
-const voterRoutes = require('./voterRoutes');
-
 // Pass routes through router
-router.use(candidateRoutes);
-router.use(partyRoutes);
-router.use(voterRoutes);
+router.use(require('./candidateRoutes'));
+router.use(require('./partyRoutes'));
+router.use(require('./voterRoutes'));
+router.use(require('./voteRoutes'));
 
 
 
