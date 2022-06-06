@@ -8,7 +8,6 @@ const db = mysql.createConnection(
         password: 'awdxsjilmk',
         database: 'election'
     },
-    console.log('Connected to the election database.')
 );
 
 module.exports = db;
